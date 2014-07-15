@@ -1,0 +1,58 @@
+{
+    "products": [
+                 {
+                 "productId": 0,
+                 "productName": "Shirt",
+                 "productDescription": "This is a shirt",
+                 "productRegularPrice": "$4.00",
+                 "productSalePrice": "$3.50",
+                 "productPhoto": "whiteShirt",
+                 "productColors": [
+                                   "Blue",
+                                   "Green",
+                                   "Red",
+                                   "White"
+                                   ],
+                 "productStores": {
+                 "001": "NYC",
+                 "002": "SFO",
+                 "003": "DET"
+                 }
+                 },
+                 {
+                 "productId": 1,
+                 "productName": "Pants",
+                 "productDescription": "This is a pair of pants",
+                 "productRegularPrice": "$14.00",
+                 "productSalePrice": "$14.00",
+                 "productPhoto": "bluePants",
+                 "productColors": [
+                                   "Blue",
+                                   "White",
+                                   "Black"
+                                   ],
+                 "productStores": {
+                 "001": "NYC",
+                 "002": "SFO",
+                 "004": "STL"
+                 }
+                 },
+                 {
+                 "productId": 2,
+                 "productName": "Socks",
+                 "productDescription": "Cool looking socks!",
+                 "productRegularPrice": "$2.00",
+                 "productSalePrice": "$1.00",
+                 "productPhoto": "whiteSocks",
+                 "productColors": [
+                                   "White",
+                                   "Black"
+                                   ],
+                 "productStores": {
+                 "003": "DET",
+                 "004": "STL",
+                 "005": "ATL"
+                 }
+                 }
+                 ]
+}
