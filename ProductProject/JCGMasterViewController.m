@@ -11,6 +11,7 @@
 #import "JCGDetailViewController.h"
 #import "Product.h"
 #import "JCGTableViewController.h"
+#import "JCGAddProductViewController.h"
 
 @interface JCGMasterViewController ()
 @end
@@ -51,14 +52,14 @@
                 NSLog(@"Failed to create table");
             }
             sql_stmt =
-            "CREATE TABLE IF NOT EXISTS COLORS (PRODUCTID INTEGER PRIMARY KEY, PRODUCTCOLOR TEXT)";
+            "CREATE TABLE IF NOT EXISTS COLORS (IDCOLOR TEXT PRIMARY KEY, PRODUCTID INTEGER FOREIGNKEY, PRODUCTCOLOR TEXT)";
             
             if (sqlite3_exec(_contactDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             {
                 NSLog(@"Failed to create table");
             }
             sql_stmt =
-            "CREATE TABLE IF NOT EXISTS STORES (STOREID INTEGER PRIMARY KEY, PRODUCTID INTEGER FOREIGNKEY, STORENAME TEXT)";
+            "CREATE TABLE IF NOT EXISTS STORES (STOREPRODUCT TEXT PRIMARY KEY, STOREID INTEGER FOREIGNKEY, PRODUCTID INTEGER FOREIGNKEY, STORENAME TEXT)";
             
             if (sqlite3_exec(_contactDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
             {
@@ -108,8 +109,8 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"INSERT INTO COLORS (PRODUCTID, PRODUCTCOLOR) VALUES (\"%@\", \"%@\")",
-                               productId, color];
+                               @"INSERT INTO COLORS (IDCOLOR, PRODUCTID, PRODUCTCOLOR) VALUES (\"%@\", \"%@\", \"%@\")",
+                               [NSString stringWithFormat:@"%@/%@", productId, color], productId, color];
         
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(_contactDB, insert_stmt,
@@ -135,8 +136,8 @@
     {
         
         NSString *insertSQL = [NSString stringWithFormat:
-                               @"INSERT INTO STORES (STOREID, PRODUCTID, STORENAME) VALUES (\"%@\", \"%@\", \"%@\")",
-                               productId, storeId, storeName];
+                               @"INSERT INTO STORES (STOREPRODUCT, STOREID, PRODUCTID, STORENAME) VALUES (\"%@\", \"%@\", \"%@\", \"%@\")",
+                               [NSString stringWithFormat:@"%@/%@", storeName, productId], storeId, productId, storeName];
         
         const char *insert_stmt = [insertSQL UTF8String];
         sqlite3_prepare_v2(_contactDB, insert_stmt,
@@ -195,14 +196,17 @@
     [super viewDidLoad];
     [self setUpDatabase];
     [self populateDatabase];
-    
-    /*UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-     self.navigationItem.rightBarButtonItem = addButton;*/
 }
+
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:@"showProduct"]){
         JCGTableViewController *controller = (JCGTableViewController *)segue.destinationViewController;
+        controller.dBPath = _dBPath;
+        controller.contactDB = _contactDB;
+    }
+    if([segue.identifier isEqualToString:@"createProduct"]){
+        JCGAddProductViewController *controller = (JCGAddProductViewController *)segue.destinationViewController;
         controller.dBPath = _dBPath;
         controller.contactDB = _contactDB;
     }

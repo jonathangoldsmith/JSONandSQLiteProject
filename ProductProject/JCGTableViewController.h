@@ -12,7 +12,7 @@
 @interface JCGTableViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSString *dBPath;
+@property (nonatomic) NSString *dBPath;
 @property (nonatomic) sqlite3 *contactDB;
 
 @end

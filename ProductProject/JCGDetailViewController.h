@@ -9,16 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "JCGTableViewController.h"
 
-@interface JCGDetailViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate>
+@interface JCGDetailViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UIAlertViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *productRegularPrice;
-@property (weak, nonatomic) IBOutlet UITextView *productDescription;
-@property (weak, nonatomic) IBOutlet UILabel *productSalePrice;
+@property (weak, nonatomic) IBOutlet UITextField *productRegularPrice;
+@property (weak, nonatomic) IBOutlet UITextField *productSalePrice;
+@property (weak, nonatomic) IBOutlet UILabel *productDescription;
 @property (weak, nonatomic) IBOutlet UILabel *productStoreList;
 @property (weak, nonatomic) IBOutlet UIPickerView *colorPicker;
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *deleteButton;
 
-@property (strong, nonatomic) NSString *dBPath;
+@property (nonatomic) NSString *dBPath;
 @property (nonatomic) sqlite3 *contactDB;
 @property (nonatomic) NSString *productName;
 

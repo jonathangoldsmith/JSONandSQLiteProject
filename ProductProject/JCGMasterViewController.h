@@ -13,8 +13,7 @@
 
 @interface JCGMasterViewController : UIViewController
 
-//@property (nonatomic) NSMutableArray *products;
-@property (strong, nonatomic) NSString *dBPath;
+@property (nonatomic) NSString *dBPath;
 @property (nonatomic) sqlite3 *contactDB;
 
 @end

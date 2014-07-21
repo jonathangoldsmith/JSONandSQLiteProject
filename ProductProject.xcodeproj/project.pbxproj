@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEB388CD197D481D00D805CA /* JCGAddProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB388CC197D481D00D805CA /* JCGAddProductViewController.m */; };
 		CEC72CCB196DB5360009BB35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC72CCA196DB5360009BB35 /* Foundation.framework */; };
 		CEC72CCD196DB5360009BB35 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC72CCC196DB5360009BB35 /* CoreGraphics.framework */; };
 		CEC72CCF196DB5360009BB35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC72CCE196DB5360009BB35 /* UIKit.framework */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CEB388CB197D481D00D805CA /* JCGAddProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JCGAddProductViewController.h; sourceTree = "<group>"; };
+		CEB388CC197D481D00D805CA /* JCGAddProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JCGAddProductViewController.m; sourceTree = "<group>"; };
 		CEC72CC7196DB5360009BB35 /* ProductProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEC72CCA196DB5360009BB35 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CEC72CCC196DB5360009BB35 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -136,6 +139,8 @@
 				CEC72CD9196DB5360009BB35 /* JCGAppDelegate.h */,
 				CEC72CDA196DB5360009BB35 /* JCGAppDelegate.m */,
 				CEC72CDC196DB5360009BB35 /* Main_iPhone.storyboard */,
+				CEB388CB197D481D00D805CA /* JCGAddProductViewController.h */,
+				CEB388CC197D481D00D805CA /* JCGAddProductViewController.m */,
 				CEC73011197415E60009BB35 /* JCGTableViewController.h */,
 				CEC73012197415E60009BB35 /* JCGTableViewController.m */,
 				CEC73014197473E40009BB35 /* JCGTableViewCell.h */,
@@ -283,6 +288,7 @@
 				CEC73013197415E60009BB35 /* JCGTableViewController.m in Sources */,
 				CEC72CE4196DB5360009BB35 /* JCGMasterViewController.m in Sources */,
 				CEC72CE7196DB5360009BB35 /* JCGDetailViewController.m in Sources */,
+				CEB388CD197D481D00D805CA /* JCGAddProductViewController.m in Sources */,
 				CEC73016197473E40009BB35 /* JCGTableViewCell.m in Sources */,
 				CEC72CDB196DB5360009BB35 /* JCGAppDelegate.m in Sources */,
 			);
@@ -491,6 +497,7 @@
 				CEC72D01196DB5360009BB35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CEC72D02196DB5360009BB35 /* Build configuration list for PBXNativeTarget "ProductProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +506,7 @@
 				CEC72D04196DB5360009BB35 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -5,6 +5,7 @@
 //  Created by Jonathan on 7/14/14.
 //  Copyright (c) 2014 Jonathan Goldsmith. All rights reserved.
 //
+// This is the VC for the Table
 
 #import "JCGTableViewController.h"
 #import "Product.h"
@@ -63,8 +64,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self getProducts];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self getProducts];
+    [self.tableView reloadData]; // to reload selected cell
 }
 
 - (void)didReceiveMemoryWarning

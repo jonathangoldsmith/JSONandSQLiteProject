@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface JCGTableViewCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *productImage;
-@property (strong, nonatomic) IBOutlet UILabel *productName;
+@property (nonatomic) IBOutlet UIImageView *productImage;
+@property (nonatomic) IBOutlet UILabel *productName;
 
 @end
